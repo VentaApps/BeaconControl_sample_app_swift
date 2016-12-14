@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B7EE157554E120CC4348E82 /* libPods-BCSampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */; };
+		AF1052FE1E01F24900C5FD4D /* BCBeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */; };
+		AF1053001E01F34700C5FD4D /* BCEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */; };
 		AFB12AA11E01689000EF9636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AA01E01689000EF9636 /* AppDelegate.swift */; };
-		AFB12AA31E01689000EF9636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AA21E01689000EF9636 /* ViewController.swift */; };
 		AFB12AA61E01689000EF9636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA41E01689000EF9636 /* Main.storyboard */; };
 		AFB12AA81E01689000EF9636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA71E01689000EF9636 /* Assets.xcassets */; };
 		AFB12AAB1E01689000EF9636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA91E01689000EF9636 /* LaunchScreen.storyboard */; };
+		AFB12AB91E016D1600EF9636 /* BCBeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AB81E016D1600EF9636 /* BCBeaconsViewController.swift */; };
+		AFB12ABB1E016D2900EF9636 /* BCEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12ABA1E016D2900EF9636 /* BCEventsViewController.swift */; };
+		AFB12ABE1E018D2B00EF9636 /* BCTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12ABD1E018D2B00EF9636 /* BCTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCSampleSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46C21D6B8B3121E3F229FE54 /* Pods-BCSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		88A06B1093AAC2AB0CC78EAE /* Pods-BCSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
+		AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeaconCell.swift; sourceTree = "<group>"; };
+		AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCEventCell.swift; sourceTree = "<group>"; };
 		AFB12A9D1E01689000EF9636 /* BCSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB12AA01E01689000EF9636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFB12AA21E01689000EF9636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFB12AA51E01689000EF9636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFB12AA71E01689000EF9636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFB12AAA1E01689000EF9636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFB12AAC1E01689000EF9636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB12AB81E016D1600EF9636 /* BCBeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeaconsViewController.swift; sourceTree = "<group>"; };
+		AFB12ABA1E016D2900EF9636 /* BCEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCEventsViewController.swift; sourceTree = "<group>"; };
+		AFB12ABD1E018D2B00EF9636 /* BCTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7EE157554E120CC4348E82 /* libPods-BCSampleSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4823F7D402E64B7129933B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46C21D6B8B3121E3F229FE54 /* Pods-BCSampleSwift.debug.xcconfig */,
+				88A06B1093AAC2AB0CC78EAE /* Pods-BCSampleSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A725331FC2B041BCB5D4328D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AFB12A941E01688F00EF9636 = {
 			isa = PBXGroup;
 			children = (
 				AFB12A9F1E01689000EF9636 /* BCSampleSwift */,
 				AFB12A9E1E01689000EF9636 /* Products */,
+				A4823F7D402E64B7129933B5 /* Pods */,
+				A725331FC2B041BCB5D4328D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +86,42 @@
 		AFB12A9F1E01689000EF9636 /* BCSampleSwift */ = {
 			isa = PBXGroup;
 			children = (
+				AFB12AB51E016C7F00EF9636 /* controller */,
+				AFB12AB61E016C7F00EF9636 /* model */,
+				AFB12AB71E016C7F00EF9636 /* view */,
 				AFB12AA01E01689000EF9636 /* AppDelegate.swift */,
-				AFB12AA21E01689000EF9636 /* ViewController.swift */,
 				AFB12AA41E01689000EF9636 /* Main.storyboard */,
 				AFB12AA71E01689000EF9636 /* Assets.xcassets */,
 				AFB12AA91E01689000EF9636 /* LaunchScreen.storyboard */,
 				AFB12AAC1E01689000EF9636 /* Info.plist */,
 			);
 			path = BCSampleSwift;
+			sourceTree = "<group>";
+		};
+		AFB12AB51E016C7F00EF9636 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFB12AB81E016D1600EF9636 /* BCBeaconsViewController.swift */,
+				AFB12ABA1E016D2900EF9636 /* BCEventsViewController.swift */,
+				AFB12ABD1E018D2B00EF9636 /* BCTabBarController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AFB12AB61E016C7F00EF9636 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AFB12AB71E016C7F00EF9636 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */,
+				AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFB12AAF1E01689000EF9636 /* Build configuration list for PBXNativeTarget "BCSampleSwift" */;
 			buildPhases = (
+				A07739CD55F849A0812BCB8A /* [CP] Check Pods Manifest.lock */,
 				AFB12A991E01689000EF9636 /* Sources */,
 				AFB12A9A1E01689000EF9636 /* Frameworks */,
 				AFB12A9B1E01689000EF9636 /* Resources */,
+				B9AEB818184354A5DD780E7D /* [CP] Embed Pods Frameworks */,
+				9C47B93430986B8CD7636C2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +153,7 @@
 		AFB12A951E01688F00EF9636 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BC;
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Upnext;
@@ -132,13 +196,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C47B93430986B8CD7636C2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A07739CD55F849A0812BCB8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9AEB818184354A5DD780E7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFB12A991E01689000EF9636 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB12AA31E01689000EF9636 /* ViewController.swift in Sources */,
+				AFB12ABE1E018D2B00EF9636 /* BCTabBarController.swift in Sources */,
+				AFB12ABB1E016D2900EF9636 /* BCEventsViewController.swift in Sources */,
 				AFB12AA11E01689000EF9636 /* AppDelegate.swift in Sources */,
+				AFB12AB91E016D1600EF9636 /* BCBeaconsViewController.swift in Sources */,
+				AF1052FE1E01F24900C5FD4D /* BCBeaconCell.swift in Sources */,
+				AF1053001E01F34700C5FD4D /* BCEventCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +373,7 @@
 		};
 		AFB12AB01E01689000EF9636 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C21D6B8B3121E3F229FE54 /* Pods-BCSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWKF65T5X4;
@@ -264,12 +381,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.upnext.bcsample.BCSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../BeaconCtrl_iOS_SDK/BeaconCtrl/BCLBeaconControl-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		AFB12AB11E01689000EF9636 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A06B1093AAC2AB0CC78EAE /* Pods-BCSampleSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WWKF65T5X4;
@@ -277,6 +396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.upnext.bcsample.BCSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../BeaconCtrl_iOS_SDK/BeaconCtrl/BCLBeaconControl-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +420,7 @@
 				AFB12AB11E01689000EF9636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
