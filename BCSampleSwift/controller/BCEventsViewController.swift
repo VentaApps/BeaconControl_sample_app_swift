@@ -11,7 +11,7 @@ import UIKit
 class BCEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var events: [BCLAction]?
-    let BCEventCellIdentifier = "EventCellIdentifier"
+    private let BCEventCellIdentifier = "EventCellIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,6 @@ class BCEventsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BCEventCellIdentifier)!;
-        
         return cell;
     }
     
