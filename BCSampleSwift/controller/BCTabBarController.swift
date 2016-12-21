@@ -10,9 +10,14 @@ import UIKit
 
 class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
 
-    var beaconCtrl: BCLBeaconCtrl?
-    var beaconsViewController: BCBeaconsViewController?
-    var eventsViewController: BCEventsViewController?
+    private var beaconCtrl: BCLBeaconCtrl?
+    private var beaconsViewController: BCBeaconsViewController?
+    private var eventsViewController: BCActionsViewController?
+    private var actions = [BCLAction]() {
+        didSet {
+            self.eventsViewController?.set(actions: actions)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +36,23 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
             self.beaconsViewController?.set(beacons: beaconsArray);
         }
 
+        //set up vc properties
         for controller in self.viewControllers! {
             if let destinationVC = controller as? BCBeaconsViewController {
                 self.beaconsViewController = destinationVC
-            } else if let destinationVC = controller as? BCEventsViewController {
+            } else if let destinationVC = controller as? BCActionsViewController {
                 self.eventsViewController = destinationVC
             }
         }
+    }
+
+    func notify(_ action: BCLAction!) {
+        self.actions += [action];
+
+    }
+    
+    func didPerform(_ action: BCLAction!) {
+        self.actions += [action];
     }
 
 }

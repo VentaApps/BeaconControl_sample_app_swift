@@ -8,9 +8,10 @@
 
 import UIKit
 
-class BCEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BCActionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var events: [BCLAction]?
+    @IBOutlet weak var tableView: UITableView!
+    var actions = [BCLAction]()
     private let BCEventCellIdentifier = "EventCellIdentifier"
 
     override func viewDidLoad() {
@@ -20,15 +21,21 @@ class BCEventsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BCEventCellIdentifier)!;
-        return cell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: BCEventCellIdentifier)! as! BCEventCell
+        cell.configure(event: self.actions[indexPath.row])
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events!.count;
+        return actions.count
     }
 
-    
+    func set(actions: [BCLAction]) {
+        self.actions = actions
+        self.tableView?.reloadData();
+    }
+
+
 
     /*
     // MARK: - Navigation

@@ -12,7 +12,6 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     private var beacons : [BCLBeacon] = []
-
     private let BCBeaconCellIdentifier = "BeaconCellIdentifier"
 
     override func viewDidLoad() {
