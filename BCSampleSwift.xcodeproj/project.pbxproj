@@ -10,6 +10,7 @@
 		8B7EE157554E120CC4348E82 /* libPods-BCSampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */; };
 		AF1052FE1E01F24900C5FD4D /* BCBeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */; };
 		AF1053001E01F34700C5FD4D /* BCEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */; };
+		AF851E2F1E0AD9F100EDB5E7 /* BCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF851E2E1E0AD9F100EDB5E7 /* BCEvent.swift */; };
 		AFB12AA11E01689000EF9636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AA01E01689000EF9636 /* AppDelegate.swift */; };
 		AFB12AA61E01689000EF9636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA41E01689000EF9636 /* Main.storyboard */; };
 		AFB12AA81E01689000EF9636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA71E01689000EF9636 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		88A06B1093AAC2AB0CC78EAE /* Pods-BCSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeaconCell.swift; sourceTree = "<group>"; };
 		AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCEventCell.swift; sourceTree = "<group>"; };
+		AF851E2E1E0AD9F100EDB5E7 /* BCEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCEvent.swift; sourceTree = "<group>"; };
 		AFB12A9D1E01689000EF9636 /* BCSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB12AA01E01689000EF9636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFB12AA51E01689000EF9636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		AFB12AB61E016C7F00EF9636 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				AF851E2E1E0AD9F100EDB5E7 /* BCEvent.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				AFB12ABE1E018D2B00EF9636 /* BCTabBarController.swift in Sources */,
 				AFB12ABB1E016D2900EF9636 /* BCEventsViewController.swift in Sources */,
+				AF851E2F1E0AD9F100EDB5E7 /* BCEvent.swift in Sources */,
 				AFB12AA11E01689000EF9636 /* AppDelegate.swift in Sources */,
 				AFB12AB91E016D1600EF9636 /* BCBeaconsViewController.swift in Sources */,
 				AF1052FE1E01F24900C5FD4D /* BCBeaconCell.swift in Sources */,

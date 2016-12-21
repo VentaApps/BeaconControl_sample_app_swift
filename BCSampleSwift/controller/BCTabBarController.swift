@@ -13,9 +13,9 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     private var beaconCtrl: BCLBeaconCtrl?
     private var beaconsViewController: BCBeaconsViewController?
     private var eventsViewController: BCActionsViewController?
-    private var actions = [BCLAction]() {
+    private var events = [BCEvent]() {
         didSet {
-            self.eventsViewController?.set(actions: actions)
+            self.eventsViewController?.set(events: events)
         }
     }
 
@@ -47,12 +47,12 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     }
 
     func notify(_ action: BCLAction!) {
-        self.actions += [action];
+        self.events += [BCEvent(action: action)]
 
     }
     
     func didPerform(_ action: BCLAction!) {
-        self.actions += [action];
+        self.events += [BCEvent(action: action)]
     }
 
 }

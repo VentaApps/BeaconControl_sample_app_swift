@@ -11,7 +11,7 @@ import UIKit
 class BCActionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var actions = [BCLAction]()
+    var events = [BCEvent]()
     private let BCEventCellIdentifier = "EventCellIdentifier"
 
     override func viewDidLoad() {
@@ -22,16 +22,16 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BCEventCellIdentifier)! as! BCEventCell
-        cell.configure(event: self.actions[indexPath.row])
+        cell.configure(event: self.events[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actions.count
+        return events.count
     }
 
-    func set(actions: [BCLAction]) {
-        self.actions = actions
+    func set(events: [BCEvent]) {
+        self.events = events
         self.tableView?.reloadData();
     }
 

@@ -34,18 +34,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsB-kQ-VNf">
-                                                    <rect key="frame" x="21" y="14" width="90" height="21"/>
+                                                    <rect key="frame" x="18" y="14" width="339" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIU-gp-bFR">
+                                                    <rect key="frame" x="18" y="45.5" width="339" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BsB-kQ-VNf" firstAttribute="leading" secondItem="Goh-I5-rhM" secondAttribute="leading" constant="21" id="cTv-IO-pkV"/>
+                                                <constraint firstAttribute="bottom" secondItem="FIU-gp-bFR" secondAttribute="bottom" constant="14" id="0wT-0c-QHA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BsB-kQ-VNf" secondAttribute="trailing" constant="10" id="Acj-0M-1KH"/>
+                                                <constraint firstItem="BsB-kQ-VNf" firstAttribute="leading" secondItem="Goh-I5-rhM" secondAttribute="leadingMargin" constant="10" id="FH0-fO-mMQ"/>
+                                                <constraint firstItem="FIU-gp-bFR" firstAttribute="leading" secondItem="BsB-kQ-VNf" secondAttribute="leading" id="OVO-tP-Clb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FIU-gp-bFR" secondAttribute="trailing" constant="10" id="PeB-r2-BFs"/>
                                                 <constraint firstItem="BsB-kQ-VNf" firstAttribute="top" secondItem="Goh-I5-rhM" secondAttribute="top" constant="14" id="fIw-dD-Juu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="FIU-gp-bFR" id="RGG-jD-LlZ"/>
                                             <outlet property="eventNameLabel" destination="BsB-kQ-VNf" id="QQ8-gQ-5Cs"/>
                                         </connections>
                                     </tableViewCell>
