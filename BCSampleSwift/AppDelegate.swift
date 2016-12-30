@@ -23,17 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 options: [.alert,.sound,.badge],
                 completionHandler: { (granted, error) in }
             )
+            UNUserNotificationCenter.current().delegate = self
         } else {
             let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
             application.registerUserNotificationSettings(notificationSettings)
         }
-        
-        
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().delegate = self
-        }
-        
-        
 
         return true
     }
@@ -67,9 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         do {
             try self.beaconCtrl?.handleNotification(response.notification.request.content.userInfo)
-        } catch {
-            
-        }
+        } catch {}
     }
     
     //MARK: - Notifications
@@ -77,20 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         do {
             try self.beaconCtrl?.handleNotification(userInfo)
-        } catch {
-            
-        }
+        } catch {}
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         do {
             try self.beaconCtrl?.handleNotification(notification.userInfo)
-        } catch {
-            
-        }
+        } catch {}
     }
-    
-    
-    
 }
 

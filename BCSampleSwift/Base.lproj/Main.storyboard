@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1tU-jY-e5X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lUk-kd-LTs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,14 +23,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-zm-h2U">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" rowHeight="81" id="gm2-4y-v7h" customClass="BCEventCell" customModule="BCSampleSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gm2-4y-v7h" id="Goh-I5-rhM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsB-kQ-VNf">
@@ -71,8 +71,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Zq5-zm-h2U" secondAttribute="trailing" id="BCR-c2-7zA"/>
                             <constraint firstItem="ajx-qD-R4o" firstAttribute="top" secondItem="Zq5-zm-h2U" secondAttribute="bottom" id="CPc-te-vCx"/>
-                            <constraint firstItem="Zq5-zm-h2U" firstAttribute="top" secondItem="wCf-HY-6c2" secondAttribute="bottom" id="c2s-kn-qcb"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" id="f0A-gP-DdW"/>
+                            <constraint firstItem="Zq5-zm-h2U" firstAttribute="top" secondItem="nIy-PG-p4U" secondAttribute="top" id="idf-aR-v9Y"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" id="ec1-Ok-jvk"/>
@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="652" y="208.24587706146929"/>
         </scene>
-        <!--Beacons-->
+        <!--Beacon Control-->
         <scene sceneID="xL5-tn-7CW">
             <objects>
                 <viewController id="Bz1-BZ-l27" customClass="BCBeaconsViewController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,14 +97,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeP-fg-PNa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCellIdentifier" rowHeight="77" id="ohm-6f-kCt" customClass="BCBeaconCell" customModule="BCSampleSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ohm-6f-kCt" id="HOv-3h-ORa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-rQ-cVz">
@@ -153,12 +153,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cmg-c0-pQy" firstAttribute="top" secondItem="qeP-fg-PNa" secondAttribute="bottom" id="AiP-9B-Cr6"/>
+                            <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="2Ib-I0-iOd" secondAttribute="top" id="OEN-D1-aYN"/>
                             <constraint firstAttribute="trailing" secondItem="qeP-fg-PNa" secondAttribute="trailing" id="ZI7-hJ-09x"/>
-                            <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="YbY-LH-Z4J" secondAttribute="bottom" id="dec-VH-wAa"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="rI9-cH-DQy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Beacons" id="vDg-9M-6Bq"/>
+                    <navigationItem key="navigationItem" title="Beacon Control" id="iaY-Pl-NIv"/>
                     <connections>
                         <outlet property="tableView" destination="qeP-fg-PNa" id="evW-eY-QT7"/>
                     </connections>
@@ -167,10 +168,33 @@
             </objects>
             <point key="canvasLocation" x="652" y="-446.62668665667172"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="IpZ-uE-Jr5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYx-lP-tlk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="lUk-kd-LTs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L6i-Cq-eNz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1tU-jY-e5X" kind="relationship" relationship="rootViewController" id="FeO-wu-cW5"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1161" y="-118"/>
+        </scene>
+        <!--Beacon Control-->
         <scene sceneID="fPH-F8-Ibw">
             <objects>
                 <tabBarController id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Beacon Control" id="fKH-fe-5Uz">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" id="pmd-j5-JOm">
+                            <connections>
+                                <action selector="didPressReloadButton" destination="1tU-jY-e5X" id="NCX-mt-g1S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hd9-bC-RGv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

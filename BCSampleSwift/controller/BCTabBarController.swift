@@ -21,14 +21,16 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         BCLBeaconCtrl.setupBeaconCtrl(withClientId: "95f223e4ff83774ecd1af21bc9b67df33417f5af550ee528f61c81100dc63c66", clientSecret: "eabeb9a49b88a5b4441286e3f4ed3b0ef1896b1a50a9cdfd6d8ac5332dcd47ef", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
-            if (error == nil) {
-                let delegate = UIApplication.shared.delegate as! AppDelegate
-                delegate.beaconCtrl = beaconCtrl
-                beaconCtrl?.delegate = self
-                self.beaconCtrl = beaconCtrl!
-                self.beaconCtrl!.startMonitoringBeacons()
+            DispatchQueue.main.async {
+                if (error == nil) {
+                    let delegate = UIApplication.shared.delegate as! AppDelegate
+                    delegate.beaconCtrl = beaconCtrl
+                    beaconCtrl?.delegate = self
+                    self.beaconCtrl = beaconCtrl!
+                    self.beaconCtrl!.startMonitoringBeacons()
+                }
             }
         }
 
@@ -40,8 +42,6 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
         } else {
             Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(reloadBeacons), userInfo: nil, repeats: true)
         }
-        
-        
 
         //set up vc properties
         for controller in self.viewControllers! {
@@ -59,14 +59,15 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     }
     
     //MARK: - BeaconCtrl Delegate
-
-    func notify(_ action: BCLAction!) {
-        self.events += [BCEvent(action: action)]
-
-    }
     
     func didPerform(_ action: BCLAction!) {
         self.events += [BCEvent(action: action)]
+    }
+
+    //MARK: - Actions
+
+    @IBAction func didPressReloadButton() {
+        self.beaconCtrl?.fetchConfiguration { v in  }
     }
 
 }
