@@ -54,8 +54,13 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     }
     
     func reloadBeacons() {
-        let beaconsArray = self.beaconCtrl?.beaconsSortedByDistance();
-        self.beaconsViewController?.set(beacons: beaconsArray);
+        if (self.beaconCtrl?.configuration.beacons != nil) {
+            var beaconsArray = Array(self.beaconCtrl!.configuration.beacons)
+            beaconsArray.sort(by: { (firstBeacon, secondBeacon) -> Bool in
+                return firstBeacon.estimatedDistance < secondBeacon.estimatedDistance
+            })
+            self.beaconsViewController?.set(beacons: beaconsArray);
+        }
     }
     
     //MARK: - BeaconCtrl Delegate
@@ -67,7 +72,11 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     //MARK: - Actions
 
     @IBAction func didPressReloadButton() {
-        self.beaconCtrl?.fetchConfiguration { v in  }
+        self.beaconCtrl?.fetchConfiguration { error in
+            DispatchQueue.main.async {
+                self.reloadBeacons()
+            }
+        }
     }
 
 }
