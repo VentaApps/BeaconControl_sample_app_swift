@@ -14,6 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
     var beaconCtrl: BCLBeaconCtrl?
+    var tabBarController: BCTabBarController? {
+        get {
+            if let navigationController = self.window?.rootViewController as? UINavigationController {
+                if let tabBarController = navigationController.topViewController as? BCTabBarController {
+                    return tabBarController
+                }
+            }
+            return nil
+        }
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,6 +38,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
             application.registerUserNotificationSettings(notificationSettings)
         }
+        
+        //beacon ctrl configuration
+        BCLBeaconCtrl.setupBeaconCtrl(withClientId: "95f223e4ff83774ecd1af21bc9b67df33417f5af550ee528f61c81100dc63c66", clientSecret: "eabeb9a49b88a5b4441286e3f4ed3b0ef1896b1a50a9cdfd6d8ac5332dcd47ef", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
+            DispatchQueue.main.async {
+                if (error == nil) {
+                    self.beaconCtrl = beaconCtrl
+                    self.tabBarController?.set(beaconCtrl: beaconCtrl)
+                }
+            }
+        }
+
 
         return true
     }

@@ -9,6 +9,9 @@
 import UIKit
 
 class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
+    
+    var clientID: String?
+    var clientSecret: String?
 
     private var beaconCtrl: BCLBeaconCtrl?
     private var beaconsViewController: BCBeaconsViewController?
@@ -21,18 +24,6 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        BCLBeaconCtrl.setupBeaconCtrl(withClientId: "95f223e4ff83774ecd1af21bc9b67df33417f5af550ee528f61c81100dc63c66", clientSecret: "eabeb9a49b88a5b4441286e3f4ed3b0ef1896b1a50a9cdfd6d8ac5332dcd47ef", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
-            DispatchQueue.main.async {
-                if (error == nil) {
-                    let delegate = UIApplication.shared.delegate as! AppDelegate
-                    delegate.beaconCtrl = beaconCtrl
-                    beaconCtrl?.delegate = self
-                    self.beaconCtrl = beaconCtrl!
-                    self.beaconCtrl!.startMonitoringBeacons()
-                }
-            }
-        }
 
         //create timer for refreshing beacons state
         if #available(iOS 10.0, *) {
@@ -51,6 +42,12 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
                 self.eventsViewController = destinationVC
             }
         }
+    }
+    
+    func set(beaconCtrl: BCLBeaconCtrl?) {
+        beaconCtrl?.delegate = self
+        self.beaconCtrl = beaconCtrl
+        self.beaconCtrl?.startMonitoringBeacons()
     }
     
     func reloadBeacons() {

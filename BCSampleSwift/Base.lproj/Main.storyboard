@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gm2-4y-v7h" id="Goh-I5-rhM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsB-kQ-VNf">
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ohm-6f-kCt" id="HOv-3h-ORa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-rQ-cVz">
@@ -171,7 +171,6 @@
         <!--Navigation Controller-->
         <scene sceneID="IpZ-uE-Jr5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FYx-lP-tlk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="lUk-kd-LTs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L6i-Cq-eNz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -181,13 +180,14 @@
                         <segue destination="1tU-jY-e5X" kind="relationship" relationship="rootViewController" id="FeO-wu-cW5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYx-lP-tlk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1161" y="-118"/>
         </scene>
         <!--Beacon Control-->
         <scene sceneID="fPH-F8-Ibw">
             <objects>
-                <tabBarController id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BCTabBarViewController" id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Beacon Control" id="fKH-fe-5Uz">
                         <barButtonItem key="rightBarButtonItem" title="Reload" id="pmd-j5-JOm">
                             <connections>
