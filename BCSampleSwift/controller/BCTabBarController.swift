@@ -21,17 +21,22 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
             self.eventsViewController?.set(events: events)
         }
     }
+    
+    private var timer: Timer?
+    
+    deinit {
+        self.timer?.invalidate()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //create timer for refreshing beacons state
         if #available(iOS 10.0, *) {
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 self.reloadBeacons()
             }
         } else {
-            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(reloadBeacons), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(reloadBeacons), userInfo: nil, repeats: true)
         }
 
         //set up vc properties

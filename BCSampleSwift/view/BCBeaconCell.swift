@@ -14,7 +14,7 @@ class BCBeaconCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
 
-    func configure(beacon:BCLBeacon) {
+    func configure(beacon: BCLBeacon) {
 
         if beacon.rssi != 0 {
             self.contentView.alpha = 1.0

@@ -13,20 +13,20 @@
         <!--Events-->
         <scene sceneID="OXE-Rd-87A">
             <objects>
-                <viewController id="vhe-4S-kmT" customClass="BCActionsViewController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vhe-4S-kmT" customClass="BCActionsViewController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wCf-HY-6c2"/>
                         <viewControllerLayoutGuide type="bottom" id="ajx-qD-R4o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nIy-PG-p4U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-zm-h2U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" rowHeight="81" id="gm2-4y-v7h" customClass="BCEventCell" customModule="BCSampleSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" rowHeight="81" id="gm2-4y-v7h" customClass="BCEventCell" customModule="BCBeaconMonitor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gm2-4y-v7h" id="Goh-I5-rhM">
@@ -87,20 +87,20 @@
         <!--Beacon Control-->
         <scene sceneID="xL5-tn-7CW">
             <objects>
-                <viewController id="Bz1-BZ-l27" customClass="BCBeaconsViewController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bz1-BZ-l27" customClass="BCBeaconsViewController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YbY-LH-Z4J"/>
                         <viewControllerLayoutGuide type="bottom" id="cmg-c0-pQy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Ib-I0-iOd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeP-fg-PNa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCellIdentifier" rowHeight="77" id="ohm-6f-kCt" customClass="BCBeaconCell" customModule="BCSampleSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCellIdentifier" rowHeight="77" id="ohm-6f-kCt" customClass="BCBeaconCell" customModule="BCBeaconMonitor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ohm-6f-kCt" id="HOv-3h-ORa">
@@ -187,7 +187,7 @@
         <!--Beacon Control-->
         <scene sceneID="fPH-F8-Ibw">
             <objects>
-                <tabBarController storyboardIdentifier="BCTabBarViewController" id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BCTabBarViewController" id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Beacon Control" id="fKH-fe-5Uz">
                         <barButtonItem key="rightBarButtonItem" title="Reload" id="pmd-j5-JOm">
                             <connections>
@@ -195,7 +195,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hd9-bC-RGv">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="hd9-bC-RGv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
