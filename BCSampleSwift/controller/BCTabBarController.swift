@@ -76,6 +76,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
     @IBAction func didPressReloadButton() {
         self.beaconCtrl?.fetchConfiguration { error in
             DispatchQueue.main.async {
+                self.beaconCtrl?.startMonitoringBeacons()
                 self.reloadBeacons()
             }
         }
