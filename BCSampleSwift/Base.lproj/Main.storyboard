@@ -69,20 +69,31 @@
                                     <outlet property="delegate" destination="vhe-4S-kmT" id="au2-o0-CZ8"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCz-uf-g2S">
+                                <rect key="frame" x="20" y="84" width="335" height="514"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Zq5-zm-h2U" secondAttribute="trailing" id="BCR-c2-7zA"/>
                             <constraint firstItem="ajx-qD-R4o" firstAttribute="top" secondItem="Zq5-zm-h2U" secondAttribute="bottom" id="CPc-te-vCx"/>
+                            <constraint firstItem="mCz-uf-g2S" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" constant="20" id="CUz-WN-6gg"/>
                             <constraint firstItem="qZi-R6-fHn" firstAttribute="centerY" secondItem="nIy-PG-p4U" secondAttribute="centerY" id="Cq4-B0-cnX"/>
+                            <constraint firstItem="ajx-qD-R4o" firstAttribute="top" secondItem="mCz-uf-g2S" secondAttribute="bottom" constant="20" id="DM3-z7-wcP"/>
+                            <constraint firstAttribute="trailing" secondItem="mCz-uf-g2S" secondAttribute="trailing" constant="20" id="U6j-ca-OIP"/>
+                            <constraint firstItem="mCz-uf-g2S" firstAttribute="top" secondItem="wCf-HY-6c2" secondAttribute="bottom" constant="20" id="bXz-D0-d8u"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" id="f0A-gP-DdW"/>
                             <constraint firstItem="qZi-R6-fHn" firstAttribute="centerX" secondItem="nIy-PG-p4U" secondAttribute="centerX" id="iWd-dm-Yca"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="top" secondItem="nIy-PG-p4U" secondAttribute="top" id="idf-aR-v9Y"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" id="ec1-Ok-jvk"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events" selectedImage="events" id="ec1-Ok-jvk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="qZi-R6-fHn" id="Mia-F7-6S7"/>
+                        <outlet property="errorLabel" destination="mCz-uf-g2S" id="dDT-ry-qE7"/>
                         <outlet property="tableView" destination="Zq5-zm-h2U" id="TLl-1o-Wx5"/>
                     </connections>
                 </viewController>
@@ -158,12 +169,18 @@
                                     <outlet property="delegate" destination="Bz1-BZ-l27" id="093-k7-Qmb"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asd-8G-eQA">
+                                <rect key="frame" x="20" y="84" width="335" height="454"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gw-U4-4KU">
                                 <rect key="frame" x="0.0" y="558" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-KE-cWT">
                                         <rect key="frame" x="20" y="10" width="335" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.38431372549019605" green="0.72941176470588232" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Reload">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -188,19 +205,24 @@
                         <constraints>
                             <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerY" secondItem="2Ib-I0-iOd" secondAttribute="centerY" id="1ZU-Nu-5x7"/>
                             <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerX" secondItem="2Ib-I0-iOd" secondAttribute="centerX" id="4dO-uC-XBU"/>
+                            <constraint firstAttribute="trailing" secondItem="asd-8G-eQA" secondAttribute="trailing" constant="20" id="7Oz-y8-zpB"/>
                             <constraint firstItem="7gw-U4-4KU" firstAttribute="top" secondItem="qeP-fg-PNa" secondAttribute="bottom" id="Da8-ds-cPL"/>
+                            <constraint firstItem="7gw-U4-4KU" firstAttribute="top" secondItem="asd-8G-eQA" secondAttribute="bottom" constant="20" id="W6U-iJ-ihb"/>
+                            <constraint firstItem="asd-8G-eQA" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" constant="20" id="WHI-u3-z6c"/>
                             <constraint firstAttribute="trailing" secondItem="qeP-fg-PNa" secondAttribute="trailing" id="ZI7-hJ-09x"/>
                             <constraint firstItem="7gw-U4-4KU" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="co6-HD-Cbz"/>
                             <constraint firstAttribute="trailing" secondItem="7gw-U4-4KU" secondAttribute="trailing" id="dW0-x6-LZ1"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="YbY-LH-Z4J" secondAttribute="bottom" id="eOr-Z8-7Ot"/>
                             <constraint firstAttribute="bottom" secondItem="7gw-U4-4KU" secondAttribute="bottom" id="eg9-oy-1dB"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="rI9-cH-DQy"/>
+                            <constraint firstItem="asd-8G-eQA" firstAttribute="top" secondItem="YbY-LH-Z4J" secondAttribute="bottom" constant="20" id="vLv-N4-8Fn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Beacons" id="vDg-9M-6Bq"/>
+                    <tabBarItem key="tabBarItem" title="Beacons" image="beacons" selectedImage="beacons" id="vDg-9M-6Bq"/>
                     <navigationItem key="navigationItem" title="Beacon Control" id="iaY-Pl-NIv"/>
                     <connections>
                         <outlet property="activityIndicator" destination="TQF-Wb-0Xp" id="0rX-LF-0ZT"/>
+                        <outlet property="errorLabel" destination="asd-8G-eQA" id="ouZ-u4-fts"/>
                         <outlet property="tableView" destination="qeP-fg-PNa" id="evW-eY-QT7"/>
                     </connections>
                 </viewController>
@@ -244,4 +266,8 @@
             <point key="canvasLocation" x="-300" y="-118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beacons" width="25" height="25"/>
+        <image name="events" width="25" height="25"/>
+    </resources>
 </document>
