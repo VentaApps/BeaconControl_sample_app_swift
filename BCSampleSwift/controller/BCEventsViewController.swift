@@ -12,11 +12,14 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorLabel: UILabel!
     var events = [BCEvent]()
     private let BCEventCellIdentifier = "EventCellIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        hideNoItemsErrorLabel()
 
         // Do any additional setup after loading the view.
     }
@@ -28,6 +31,10 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(!(self.events.count > 0)){
+            showNoItemsErrorLabel()
+        }
         return events.count
     }
 
@@ -35,6 +42,17 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
         self.events = events
         self.tableView?.reloadData();
     }
+    
+
+    func showNoItemsErrorLabel(){
+        self.errorLabel.text = "No events available"
+        self.errorLabel.isHidden = false
+    }
+
+    func hideNoItemsErrorLabel(){
+        self.errorLabel.isHidden = true
+    }
+
 
 
 
