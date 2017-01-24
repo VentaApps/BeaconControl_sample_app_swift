@@ -10,12 +10,25 @@ import UIKit
 
 class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    var delegate:TabbarViewControllerDelegate?
+    
     private var beacons : [BCLBeacon] = []
     private let BCBeaconCellIdentifier = "BeaconCellIdentifier"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func startedLoading(){
+        self.tableView.isHidden = true;
+        self.activityIndicator.startAnimating()
+    }
+    func endLoading(){
+        self.tableView.isHidden = false;
+        self.activityIndicator.stopAnimating()
+        
     }
 
     func set(beacons: [BCLBeacon]?) {
@@ -33,4 +46,16 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.configure(beacon: beacon);
         return cell;
     }
+    
+    @IBAction func reloadButtonPressed(_ sender: Any) {
+//        if ((self.delegate?.reloadButtonPressed) != nil) {
+            self.delegate?.reloadButtonPressed()
+//        }
+    }
+}
+
+
+
+protocol TabbarViewControllerDelegate {
+    func reloadButtonPressed()
 }

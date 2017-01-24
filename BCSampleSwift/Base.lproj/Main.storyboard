@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lUk-kd-LTs">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lUk-kd-LTs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Events-->
         <scene sceneID="OXE-Rd-87A">
             <objects>
-                <viewController id="vhe-4S-kmT" customClass="BCActionsViewController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vhe-4S-kmT" customClass="BCActionsViewController" customModule="BeaconScan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wCf-HY-6c2"/>
                         <viewControllerLayoutGuide type="bottom" id="ajx-qD-R4o"/>
@@ -22,11 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-R6-fHn">
+                                <rect key="frame" x="177" y="299" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-zm-h2U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" rowHeight="81" id="gm2-4y-v7h" customClass="BCEventCell" customModule="BCBeaconMonitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCellIdentifier" rowHeight="81" id="gm2-4y-v7h" customClass="BCEventCell" customModule="BeaconScan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gm2-4y-v7h" id="Goh-I5-rhM">
@@ -40,7 +43,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIU-gp-bFR">
-                                                    <rect key="frame" x="18" y="46" width="339" height="21"/>
+                                                    <rect key="frame" x="18" y="45" width="339" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -71,12 +74,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Zq5-zm-h2U" secondAttribute="trailing" id="BCR-c2-7zA"/>
                             <constraint firstItem="ajx-qD-R4o" firstAttribute="top" secondItem="Zq5-zm-h2U" secondAttribute="bottom" id="CPc-te-vCx"/>
+                            <constraint firstItem="qZi-R6-fHn" firstAttribute="centerY" secondItem="nIy-PG-p4U" secondAttribute="centerY" id="Cq4-B0-cnX"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" id="f0A-gP-DdW"/>
+                            <constraint firstItem="qZi-R6-fHn" firstAttribute="centerX" secondItem="nIy-PG-p4U" secondAttribute="centerX" id="iWd-dm-Yca"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="top" secondItem="nIy-PG-p4U" secondAttribute="top" id="idf-aR-v9Y"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" id="ec1-Ok-jvk"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="qZi-R6-fHn" id="Mia-F7-6S7"/>
                         <outlet property="tableView" destination="Zq5-zm-h2U" id="TLl-1o-Wx5"/>
                     </connections>
                 </viewController>
@@ -87,7 +93,7 @@
         <!--Beacon Control-->
         <scene sceneID="xL5-tn-7CW">
             <objects>
-                <viewController id="Bz1-BZ-l27" customClass="BCBeaconsViewController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bz1-BZ-l27" customClass="BCBeaconsViewController" customModule="BeaconScan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YbY-LH-Z4J"/>
                         <viewControllerLayoutGuide type="bottom" id="cmg-c0-pQy"/>
@@ -96,11 +102,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-Wb-0Xp">
+                                <rect key="frame" x="178" y="299" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeP-fg-PNa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="494"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCellIdentifier" rowHeight="77" id="ohm-6f-kCt" customClass="BCBeaconCell" customModule="BCBeaconMonitor" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCellIdentifier" rowHeight="77" id="ohm-6f-kCt" customClass="BCBeaconCell" customModule="BeaconScan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ohm-6f-kCt" id="HOv-3h-ORa">
@@ -114,7 +123,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-wn-a5d">
-                                                    <rect key="frame" x="18" y="45.5" width="339" height="21"/>
+                                                    <rect key="frame" x="18" y="45" width="339" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -149,18 +158,49 @@
                                     <outlet property="delegate" destination="Bz1-BZ-l27" id="093-k7-Qmb"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gw-U4-4KU">
+                                <rect key="frame" x="0.0" y="558" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-KE-cWT">
+                                        <rect key="frame" x="20" y="10" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Reload">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reloadButtonPressed:" destination="Bz1-BZ-l27" eventType="touchUpInside" id="3G4-DE-3l8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JxO-Tk-w1k"/>
+                                    <constraint firstItem="yDX-KE-cWT" firstAttribute="leading" secondItem="7gw-U4-4KU" secondAttribute="leading" constant="20" id="Ofl-nm-mtZ"/>
+                                    <constraint firstItem="yDX-KE-cWT" firstAttribute="centerY" secondItem="7gw-U4-4KU" secondAttribute="centerY" id="Q83-cu-tIz"/>
+                                    <constraint firstAttribute="trailing" secondItem="yDX-KE-cWT" secondAttribute="trailing" constant="20" id="TFF-tm-Rqv"/>
+                                    <constraint firstAttribute="bottom" secondItem="yDX-KE-cWT" secondAttribute="bottom" constant="10" id="VoW-bI-7c6"/>
+                                    <constraint firstItem="yDX-KE-cWT" firstAttribute="top" secondItem="7gw-U4-4KU" secondAttribute="top" constant="10" id="he5-hm-LmM"/>
+                                    <constraint firstItem="yDX-KE-cWT" firstAttribute="centerX" secondItem="7gw-U4-4KU" secondAttribute="centerX" id="pHo-WU-Ksk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cmg-c0-pQy" firstAttribute="top" secondItem="qeP-fg-PNa" secondAttribute="bottom" id="AiP-9B-Cr6"/>
-                            <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="2Ib-I0-iOd" secondAttribute="top" id="OEN-D1-aYN"/>
+                            <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerY" secondItem="2Ib-I0-iOd" secondAttribute="centerY" id="1ZU-Nu-5x7"/>
+                            <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerX" secondItem="2Ib-I0-iOd" secondAttribute="centerX" id="4dO-uC-XBU"/>
+                            <constraint firstItem="7gw-U4-4KU" firstAttribute="top" secondItem="qeP-fg-PNa" secondAttribute="bottom" id="Da8-ds-cPL"/>
                             <constraint firstAttribute="trailing" secondItem="qeP-fg-PNa" secondAttribute="trailing" id="ZI7-hJ-09x"/>
+                            <constraint firstItem="7gw-U4-4KU" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="co6-HD-Cbz"/>
+                            <constraint firstAttribute="trailing" secondItem="7gw-U4-4KU" secondAttribute="trailing" id="dW0-x6-LZ1"/>
+                            <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="YbY-LH-Z4J" secondAttribute="bottom" id="eOr-Z8-7Ot"/>
+                            <constraint firstAttribute="bottom" secondItem="7gw-U4-4KU" secondAttribute="bottom" id="eg9-oy-1dB"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="rI9-cH-DQy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Beacons" id="vDg-9M-6Bq"/>
                     <navigationItem key="navigationItem" title="Beacon Control" id="iaY-Pl-NIv"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="TQF-Wb-0Xp" id="0rX-LF-0ZT"/>
                         <outlet property="tableView" destination="qeP-fg-PNa" id="evW-eY-QT7"/>
                     </connections>
                 </viewController>
@@ -187,14 +227,8 @@
         <!--Beacon Control-->
         <scene sceneID="fPH-F8-Ibw">
             <objects>
-                <tabBarController storyboardIdentifier="BCTabBarViewController" id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BCBeaconMonitor" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Beacon Control" id="fKH-fe-5Uz">
-                        <barButtonItem key="rightBarButtonItem" title="Reload" id="pmd-j5-JOm">
-                            <connections>
-                                <action selector="didPressReloadButton" destination="1tU-jY-e5X" id="NCX-mt-g1S"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                <tabBarController storyboardIdentifier="BCTabBarViewController" id="1tU-jY-e5X" customClass="BCTabBarController" customModule="BeaconScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Beacon Control" id="fKH-fe-5Uz"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="hd9-bC-RGv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

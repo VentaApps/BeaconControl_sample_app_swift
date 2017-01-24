@@ -11,6 +11,7 @@ import UIKit
 class BCActionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var events = [BCEvent]()
     private let BCEventCellIdentifier = "EventCellIdentifier"
 

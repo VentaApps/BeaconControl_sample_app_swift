@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
+class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, TabbarViewControllerDelegate {
     
     var clientID: String?
     var clientSecret: String?
@@ -20,6 +20,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
         didSet {
             self.eventsViewController?.set(events: events)
         }
+        
     }
     
     private var timer: Timer?
@@ -43,6 +44,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
         for controller in self.viewControllers! {
             if let destinationVC = controller as? BCBeaconsViewController {
                 self.beaconsViewController = destinationVC
+                self.beaconsViewController?.delegate = self
             } else if let destinationVC = controller as? BCActionsViewController {
                 self.eventsViewController = destinationVC
             }
@@ -65,19 +67,26 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate {
         }
     }
     
+    
+    
     //MARK: - BeaconCtrl Delegate
     
     func didPerform(_ action: BCLAction!) {
         self.events += [BCEvent(action: action)]
     }
 
-    //MARK: - Actions
-
-    @IBAction func didPressReloadButton() {
+    //MARK: - TabbarViewControllerDelegate
+    
+    func reloadButtonPressed() {
+    
+        self.beaconsViewController?.startedLoading()
+        
         self.beaconCtrl?.fetchConfiguration { error in
             DispatchQueue.main.async {
                 self.beaconCtrl?.startMonitoringBeacons()
                 self.reloadBeacons()
+                self.beaconsViewController?.endLoading()
+                
             }
         }
     }
