@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         //beacon ctrl configuration
-        BCLBeaconCtrl.setupBeaconCtrl(withClientId: "95f223e4ff83774ecd1af21bc9b67df33417f5af550ee528f61c81100dc63c66", clientSecret: "eabeb9a49b88a5b4441286e3f4ed3b0ef1896b1a50a9cdfd6d8ac5332dcd47ef", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
+        BCLBeaconCtrl.setupBeaconCtrl(withClientId: "9daf7a6e4140e4e5884912b38c27685688756c4ba9768cf567842c203fb73adc", clientSecret: "172368830e229c0f269c0fe54b019ea3ed35254bf9fdbc63a6152e924852c188", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
             DispatchQueue.main.async {
                 if (error == nil) {
                     self.beaconCtrl = beaconCtrl
