@@ -13,7 +13,7 @@
 		AF851E2F1E0AD9F100EDB5E7 /* BCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF851E2E1E0AD9F100EDB5E7 /* BCEvent.swift */; };
 		AFB12AA11E01689000EF9636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AA01E01689000EF9636 /* AppDelegate.swift */; };
 		AFB12AA61E01689000EF9636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA41E01689000EF9636 /* Main.storyboard */; };
-		AFB12AA81E01689000EF9636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA71E01689000EF9636 /* Assets.xcassets */; };
+		AFB12AA81E01689000EF9636 /* SampleAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA71E01689000EF9636 /* SampleAssets.xcassets */; };
 		AFB12AAB1E01689000EF9636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB12AA91E01689000EF9636 /* LaunchScreen.storyboard */; };
 		AFB12AB91E016D1600EF9636 /* BCBeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12AB81E016D1600EF9636 /* BCBeaconsViewController.swift */; };
 		AFB12ABB1E016D2900EF9636 /* BCEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB12ABA1E016D2900EF9636 /* BCEventsViewController.swift */; };
@@ -30,7 +30,7 @@
 		AFB12A9D1E01689000EF9636 /* BCSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB12AA01E01689000EF9636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFB12AA51E01689000EF9636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFB12AA71E01689000EF9636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFB12AA71E01689000EF9636 /* SampleAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SampleAssets.xcassets; sourceTree = "<group>"; };
 		AFB12AAA1E01689000EF9636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFB12AAC1E01689000EF9636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFB12AB81E016D1600EF9636 /* BCBeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeaconsViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				AFB12AB71E016C7F00EF9636 /* view */,
 				AFB12AA01E01689000EF9636 /* AppDelegate.swift */,
 				AFB12AA41E01689000EF9636 /* Main.storyboard */,
-				AFB12AA71E01689000EF9636 /* Assets.xcassets */,
+				AFB12AA71E01689000EF9636 /* SampleAssets.xcassets */,
 				AFB12AA91E01689000EF9636 /* LaunchScreen.storyboard */,
 				AFB12AAC1E01689000EF9636 /* Info.plist */,
 			);
@@ -192,7 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB12AAB1E01689000EF9636 /* LaunchScreen.storyboard in Resources */,
-				AFB12AA81E01689000EF9636 /* Assets.xcassets in Resources */,
+				AFB12AA81E01689000EF9636 /* SampleAssets.xcassets in Resources */,
 				AFB12AA61E01689000EF9636 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
