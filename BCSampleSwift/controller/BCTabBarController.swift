@@ -49,6 +49,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsVi
                 self.eventsViewController = destinationVC
             }
         }
+        self.reloadBeacons()
     }
     
     func set(beaconCtrl: BCLBeaconCtrl?) {
@@ -66,9 +67,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsVi
             self.beaconsViewController?.set(beacons: beaconsArray);
         }
     }
-    
-    
-    
+
     //MARK: - BeaconCtrl Delegate
     
     func didPerform(_ action: BCLAction!) {
@@ -78,15 +77,13 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsVi
     //MARK: - BCBeaconsViewController Delegate
     
     func reloadButtonPressed() {
-    
         self.beaconsViewController?.startedLoading()
-        
+
         self.beaconCtrl?.fetchConfiguration { error in
             DispatchQueue.main.async {
                 self.beaconCtrl?.startMonitoringBeacons()
                 self.reloadBeacons()
                 self.beaconsViewController?.endLoading()
-                
             }
         }
     }

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--Actions-->
         <scene sceneID="OXE-Rd-87A">
             <objects>
                 <viewController id="vhe-4S-kmT" customClass="BCActionsViewController" customModule="BeaconScan" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,8 +66,8 @@
                                     <outlet property="delegate" destination="vhe-4S-kmT" id="au2-o0-CZ8"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty list info label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCz-uf-g2S">
-                                <rect key="frame" x="20" y="267" width="335" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No actions triggered yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCz-uf-g2S">
+                                <rect key="frame" x="20" y="236.5" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,14 +78,14 @@
                             <constraint firstAttribute="trailing" secondItem="Zq5-zm-h2U" secondAttribute="trailing" id="BCR-c2-7zA"/>
                             <constraint firstItem="ajx-qD-R4o" firstAttribute="top" secondItem="Zq5-zm-h2U" secondAttribute="bottom" id="CPc-te-vCx"/>
                             <constraint firstItem="mCz-uf-g2S" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" constant="20" id="CUz-WN-6gg"/>
-                            <constraint firstItem="mCz-uf-g2S" firstAttribute="centerY" secondItem="Zq5-zm-h2U" secondAttribute="centerY" id="TRu-gZ-dGb"/>
+                            <constraint firstItem="mCz-uf-g2S" firstAttribute="centerY" secondItem="Zq5-zm-h2U" secondAttribute="centerY" constant="-30" id="TRu-gZ-dGb"/>
                             <constraint firstAttribute="trailing" secondItem="mCz-uf-g2S" secondAttribute="trailing" constant="20" id="U6j-ca-OIP"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="leading" secondItem="nIy-PG-p4U" secondAttribute="leading" id="f0A-gP-DdW"/>
                             <constraint firstItem="Zq5-zm-h2U" firstAttribute="top" secondItem="nIy-PG-p4U" secondAttribute="top" id="idf-aR-v9Y"/>
                             <constraint firstItem="mCz-uf-g2S" firstAttribute="centerX" secondItem="Zq5-zm-h2U" secondAttribute="centerX" id="zO9-xh-EcA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="events" selectedImage="events" id="ec1-Ok-jvk"/>
+                    <tabBarItem key="tabBarItem" title="Actions" image="events" selectedImage="events" id="ec1-Ok-jvk"/>
                     <connections>
                         <outlet property="errorLabel" destination="mCz-uf-g2S" id="dDT-ry-qE7"/>
                         <outlet property="tableView" destination="Zq5-zm-h2U" id="TLl-1o-Wx5"/>
@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-Wb-0Xp">
-                                <rect key="frame" x="178" y="267" width="20" height="20"/>
+                                <rect key="frame" x="178" y="237" width="20" height="20"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qeP-fg-PNa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="494"/>
@@ -163,7 +163,7 @@
                                     <outlet property="delegate" destination="Bz1-BZ-l27" id="093-k7-Qmb"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty list info label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asd-8G-eQA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No beacons available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asd-8G-eQA">
                                 <rect key="frame" x="20" y="237" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -197,18 +197,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerY" secondItem="2Ib-I0-iOd" secondAttribute="centerY" id="1ZU-Nu-5x7"/>
                             <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerX" secondItem="2Ib-I0-iOd" secondAttribute="centerX" id="4dO-uC-XBU"/>
                             <constraint firstItem="asd-8G-eQA" firstAttribute="centerY" secondItem="qeP-fg-PNa" secondAttribute="centerY" id="5VS-9d-qQC"/>
                             <constraint firstAttribute="trailing" secondItem="asd-8G-eQA" secondAttribute="trailing" constant="20" id="7Oz-y8-zpB"/>
                             <constraint firstItem="7gw-U4-4KU" firstAttribute="top" secondItem="qeP-fg-PNa" secondAttribute="bottom" id="Da8-ds-cPL"/>
                             <constraint firstItem="asd-8G-eQA" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" constant="20" id="WHI-u3-z6c"/>
                             <constraint firstAttribute="trailing" secondItem="qeP-fg-PNa" secondAttribute="trailing" id="ZI7-hJ-09x"/>
+                            <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerY" secondItem="qeP-fg-PNa" secondAttribute="centerY" id="bzF-D4-sN9"/>
                             <constraint firstItem="7gw-U4-4KU" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="co6-HD-Cbz"/>
                             <constraint firstAttribute="trailing" secondItem="7gw-U4-4KU" secondAttribute="trailing" id="dW0-x6-LZ1"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="top" secondItem="YbY-LH-Z4J" secondAttribute="bottom" id="eOr-Z8-7Ot"/>
                             <constraint firstAttribute="bottom" secondItem="7gw-U4-4KU" secondAttribute="bottom" id="eg9-oy-1dB"/>
-                            <constraint firstItem="asd-8G-eQA" firstAttribute="centerX" secondItem="qeP-fg-PNa" secondAttribute="centerX" id="gRr-SD-x7v"/>
+                            <constraint firstItem="TQF-Wb-0Xp" firstAttribute="centerX" secondItem="qeP-fg-PNa" secondAttribute="centerX" id="my4-lr-HYk"/>
                             <constraint firstItem="qeP-fg-PNa" firstAttribute="leading" secondItem="2Ib-I0-iOd" secondAttribute="leading" id="rI9-cH-DQy"/>
                         </constraints>
                     </view>

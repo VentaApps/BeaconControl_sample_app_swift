@@ -31,8 +31,7 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if(!(self.events.count > 0)){
+        if(!(self.events.count > 0)) {
             showNoItemsErrorLabel()
         }
         return events.count
@@ -44,12 +43,11 @@ class BCActionsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
-    func showNoItemsErrorLabel(){
-        self.errorLabel.text = "No events available"
+    func showNoItemsErrorLabel() {
         self.errorLabel.isHidden = false
     }
 
-    func hideNoItemsErrorLabel(){
+    func hideNoItemsErrorLabel() {
         self.errorLabel.isHidden = true
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorLabel: UILabel!
 
@@ -20,38 +20,39 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-        hideNoItemsErrorLabel()
+        self.hideNoItemsErrorLabel()
+        tableView!.tableFooterView = UIView()
     }
     
-    func startedLoading(){
+    func startedLoading() {
         hideNoItemsErrorLabel()
-        self.tableView.isHidden = true;
+        self.tableView?.isHidden = true;
         self.activityIndicator.startAnimating()
     }
-    func endLoading(){
-        self.tableView.isHidden = false;
+
+    func endLoading() {
+        self.tableView?.isHidden = false;
         self.activityIndicator.stopAnimating()
         
-        if(!(self.beacons.count > 0)){
+        if(!(self.beacons.count > 0)) {
             showNoItemsErrorLabel()
         }
     }
-    func showNoItemsErrorLabel(){
-        self.errorLabel.text = "No beacons available"
+    func showNoItemsErrorLabel() {
         self.errorLabel.isHidden = false
     }
     
-    func hideNoItemsErrorLabel(){
+    func hideNoItemsErrorLabel() {
         self.errorLabel.isHidden = true
     }
 
     func set(beacons: [BCLBeacon]?) {
         self.beacons = beacons != nil ? beacons! : [BCLBeacon]();
-        self.tableView.reloadData();
+        self.tableView?.reloadData();
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.errorLabel.isHidden = (self.beacons.count > 0 || (self.tableView?.isHidden)!)
         return self.beacons.count;
     }
     
