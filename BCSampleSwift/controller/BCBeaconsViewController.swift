@@ -13,7 +13,7 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var errorLabel: UILabel!
 
-    var delegate:TabbarViewControllerDelegate?
+    var delegate: BCBeaconsViewControllerDelegate?
     
     private var beacons : [BCLBeacon] = []
     private let BCBeaconCellIdentifier = "BeaconCellIdentifier"
@@ -63,14 +63,12 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func reloadButtonPressed(_ sender: Any) {
-//        if ((self.delegate?.reloadButtonPressed) != nil) {
             self.delegate?.reloadButtonPressed()
-//        }
     }
 }
 
 
 
-protocol TabbarViewControllerDelegate {
+protocol BCBeaconsViewControllerDelegate {
     func reloadButtonPressed()
 }

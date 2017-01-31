@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, TabbarViewControllerDelegate {
+class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsViewControllerDelegate {
     
     var clientID: String?
     var clientSecret: String?
@@ -75,7 +75,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, TabbarViewC
         self.events += [BCEvent(action: action)]
     }
 
-    //MARK: - TabbarViewControllerDelegate
+    //MARK: - BCBeaconsViewController Delegate
     
     func reloadButtonPressed() {
     
