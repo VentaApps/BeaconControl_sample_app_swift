@@ -16,6 +16,8 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
     var delegate: BCBeaconsViewControllerDelegate?
     
     private var beacons : [BCLBeacon] = []
+    private var rangedBeacons : [BCLBeacon] = []
+    private var otherBeacons : [BCLBeacon] = []
     private let BCBeaconCellIdentifier = "BeaconCellIdentifier"
 
     override func viewDidLoad() {
@@ -48,27 +50,88 @@ class BCBeaconsViewController: UIViewController, UITableViewDataSource, UITableV
 
     func set(beacons: [BCLBeacon]?) {
         self.beacons = beacons != nil ? beacons! : [BCLBeacon]();
+        //sort ranged and not ranged beacons
+        self.rangedBeacons = []
+        self.otherBeacons = []
+        for beacon in self.beacons {
+            if beacon.rssi != 0 {
+                self.rangedBeacons += [beacon]
+            } else {
+                self.otherBeacons += [beacon]
+            }
+        }
+        
         self.tableView?.reloadData();
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var numberOfSections = 0;
+        if (self.rangedBeacons.count > 0) {
+            numberOfSections += 1
+        }
+        
+        if (self.otherBeacons.count > 0) {
+            numberOfSections += 1
+        }
+        
         self.errorLabel.isHidden = (self.beacons.count > 0 || (self.tableView?.isHidden)!)
-        return self.beacons.count;
+        return numberOfSections;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var result = 0
+        
+        switch section {
+            case 0:
+                if (self.rangedBeacons.count > 0) {
+                    result = self.rangedBeacons.count
+                } else {
+                    result = self.otherBeacons.count
+                }
+                break
+            case 1:
+                result = self.otherBeacons.count
+                break
+            default:
+                break
+        }
+        
+        return result;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var beacon :BCLBeacon?
+        if (indexPath.section == 0 && self.rangedBeacons.count > 0) {
+            beacon = self.rangedBeacons[indexPath.row]
+        } else {
+            beacon = self.otherBeacons[indexPath.row]
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: BCBeaconCellIdentifier)! as! BCBeaconCell;
-        let beacon = self.beacons[indexPath.row];
-        cell.configure(beacon: beacon);
+        cell.configure(beacon: beacon!);
         return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+            case 0:
+                if self.rangedBeacons.count > 0 {
+                    return "Ranged Beacons"
+                } else {
+                    return nil;
+                }
+            default:
+                return "Other"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(white: 0.95, alpha: 1.0)
     }
     
     @IBAction func reloadButtonPressed(_ sender: Any) {
             self.delegate?.reloadButtonPressed()
     }
 }
-
-
 
 protocol BCBeaconsViewControllerDelegate {
     func reloadButtonPressed()
