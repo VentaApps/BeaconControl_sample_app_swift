@@ -27,6 +27,9 @@ The actions are defined in the BeaconControl web panel under _Applications_.
 ## For developers
 
 The code present in this repository should be self-explanatory.
+
+The project uses cocoapods dependencies, so you need to run `pod update` after cloning the repo.
+
 Before you run the app, you need to provide client ID and secret for your BeaconControl application in the app delegate. They can be found in the BeaconControl's admin panel in your application's settings.
 
 ## License
