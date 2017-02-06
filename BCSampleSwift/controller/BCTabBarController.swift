@@ -71,7 +71,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsVi
     //MARK: - BeaconCtrl Delegate
     
     func didPerform(_ action: BCLAction!) {
-        self.events += [BCEvent(action: action)]
+        self.events = [BCEvent(action: action)] + self.events
     }
 
     //MARK: - BCBeaconsViewController Delegate
