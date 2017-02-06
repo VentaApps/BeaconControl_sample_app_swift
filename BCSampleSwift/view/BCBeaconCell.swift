@@ -21,7 +21,7 @@ class BCBeaconCell: UITableViewCell {
             self.distanceLabel.text = String(format:"%.2f", beacon.estimatedDistance) + "m"
         } else {
             self.contentView.alpha = 0.5
-            self.distanceLabel.text = nil
+            self.distanceLabel.text = "OUT OF RANGE"
         }
 
         self.uuidLabel.text = beacon.proximityUUID.uuidString
