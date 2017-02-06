@@ -4,6 +4,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'BCSampleSwift’ do
-	pod 'BeaconCtrl', :path => “../BeaconCtrl_iOS_SDK”
+	pod 'BeaconCtrl', :git => "https://github.com/upnext/BeaconCtrl_iOS_SDK.git", :branch => :master
 end
 
