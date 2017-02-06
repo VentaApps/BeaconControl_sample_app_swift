@@ -39,8 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             application.registerUserNotificationSettings(notificationSettings)
         }
         
-        //beacon ctrl configuration
-        BCLBeaconCtrl.setupBeaconCtrl(withClientId: "9daf7a6e4140e4e5884912b38c27685688756c4ba9768cf567842c203fb73adc", clientSecret: "172368830e229c0f269c0fe54b019ea3ed35254bf9fdbc63a6152e924852c188", userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
+        // beacon ctrl configuration
+        // the needed credentials can be found at https://beaconcontrol.io panel under Applications -> (Your application) -> Settings
+        BCLBeaconCtrl.setupBeaconCtrl(withClientId: YOUR_APP_CLIENT_ID, clientSecret: YOUR_APP_CLIENT_SECRET, userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
             DispatchQueue.main.async {
                 if (error == nil) {
                     self.beaconCtrl = beaconCtrl
