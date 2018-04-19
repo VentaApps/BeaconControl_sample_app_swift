@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B7EE157554E120CC4348E82 /* libPods-BCSampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */; };
+		47C7315EEC38E66F12CC6B01 /* Pods_BCSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1180027852A74C7B742D26FD /* Pods_BCSampleSwift.framework */; };
 		AF1052FE1E01F24900C5FD4D /* BCBeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */; };
 		AF1053001E01F34700C5FD4D /* BCEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1052FF1E01F34700C5FD4D /* BCEventCell.swift */; };
 		AF851E2F1E0AD9F100EDB5E7 /* BCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF851E2E1E0AD9F100EDB5E7 /* BCEvent.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCSampleSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1180027852A74C7B742D26FD /* Pods_BCSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C21D6B8B3121E3F229FE54 /* Pods-BCSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		88A06B1093AAC2AB0CC78EAE /* Pods-BCSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		AF1052FD1E01F24900C5FD4D /* BCBeaconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCBeaconCell.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7EE157554E120CC4348E82 /* libPods-BCSampleSwift.a in Frameworks */,
+				47C7315EEC38E66F12CC6B01 /* Pods_BCSampleSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		A725331FC2B041BCB5D4328D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				129740792FFD6E9963915BF0 /* libPods-BCSampleSwift.a */,
+				1180027852A74C7B742D26FD /* Pods_BCSampleSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,13 +221,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BCSampleSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9AEB818184354A5DD780E7D /* [CP] Embed Pods Frameworks */ = {
@@ -236,9 +239,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BCSampleSwift/Pods-BCSampleSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BeaconCtrl/BeaconCtrl.framework",
+				"${PODS_ROOT}/KontaktSDK/Cocoapods/iOS/KontaktSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMCache/SAMCache.framework",
+				"${BUILT_PRODUCTS_DIR}/UNNetworking/UNNetworking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BeaconCtrl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KontaktSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UNNetworking.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -387,7 +399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.upnext.bcsample.BCSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "../BeaconCtrl_iOS_SDK/BeaconCtrl/BCLBeaconControl-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -403,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.upnext.bcsample.BCSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "../BeaconCtrl_iOS_SDK/BeaconCtrl/BCLBeaconControl-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

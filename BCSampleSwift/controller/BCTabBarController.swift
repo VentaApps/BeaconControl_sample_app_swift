@@ -58,7 +58,7 @@ class BCTabBarController: UITabBarController, BCLBeaconCtrlDelegate, BCBeaconsVi
         self.beaconCtrl?.startMonitoringBeacons()
     }
     
-    func reloadBeacons() {
+    @objc func reloadBeacons() {
         if (self.beaconCtrl?.configuration.beacons != nil) {
             var beaconsArray = Array(self.beaconCtrl!.configuration.beacons)
             beaconsArray.sort(by: { (firstBeacon, secondBeacon) -> Bool in

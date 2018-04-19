@@ -41,14 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // beacon ctrl configuration
         // the needed credentials can be found at https://beaconcontrol.io panel under Applications -> (Your application) -> Settings
-        BCLBeaconCtrl.setupBeaconCtrl(withClientId: YOUR_APP_CLIENT_ID, clientSecret: YOUR_APP_CLIENT_SECRET, userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
-            DispatchQueue.main.async {
-                if (error == nil) {
-                    self.beaconCtrl = beaconCtrl
-                    self.tabBarController?.set(beaconCtrl: beaconCtrl)
-                }
-            }
-        }
+//        BCLBeaconCtrl.setupBeaconCtrl(withClientId: YOUR_APP_CLIENT_ID, clientSecret: YOUR_APP_CLIENT_SECRET, userId: "testUser", pushEnvironment:BCLBeaconCtrlPushEnvironment.none, pushToken: nil) { beaconCtrl, isRestoredFromCache, error in
+//            DispatchQueue.main.async {
+//                if (error == nil) {
+//                    self.beaconCtrl = beaconCtrl
+//                    self.tabBarController?.set(beaconCtrl: beaconCtrl)
+//                }
+//            }
+//        }
 
 
         return true
